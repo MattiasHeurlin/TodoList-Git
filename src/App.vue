@@ -63,6 +63,13 @@
 </template>
 
 <style scoped>
+  button {
+    background-color: #5b1899;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
   .line-through {
     text-decoration: line-through;
   }
@@ -78,6 +85,7 @@
     border-radius: 30px;
     width: 400px;
     margin: 10% auto;
+    text-align: center;
   }
   li {
     display:flex;
