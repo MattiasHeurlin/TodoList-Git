@@ -1,4 +1,10 @@
 body {
-    background-color: #01162b;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: left;
+  background-color: #242424;
 }
-

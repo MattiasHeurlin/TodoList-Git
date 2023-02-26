@@ -48,8 +48,10 @@
 <template>
   <main>
     <h1>Todo App</h1>
-    <input type="text" v-model="state.newTodoText" />
-    <button @click="addNewTodo">Add Todo</button>
+    <div class="inputContainer">
+      <input type="text" v-model="state.newTodoText" />
+      <button @click="addNewTodo">Add Todo</button>
+    </div>
     <ul>
       <li v-for="(todo, index) in state.todos" :key="index">
         <input type="checkbox" :checked="todo.completed" @change="toggleTodoStatus(index)" />
@@ -63,5 +65,23 @@
 <style scoped>
   .line-through {
     text-decoration: line-through;
+  }
+  .inputContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  main {
+    background-color: rgba(91, 24, 153, 0.422);
+    padding: 30px;
+    border-radius: 30px;
+    width: 400px;
+    margin: 10% auto;
+  }
+  li {
+    display:flex;
+    justify-content: space-between;
+    gap: 10px;
   }
 </style>
