@@ -12,7 +12,7 @@
 
     const state = reactive({
               todos: [
-                { text: 'Learn Vue', completed: false },
+                { text: 'Become VueMaster', completed: false },
                 { text: 'Build an app', completed: false },
                 { text: 'Deploy app to production', completed: false }
               ],
@@ -46,9 +46,22 @@
 </script>
 
 <template>
-  
+  <main>
+    <h1>Todo App</h1>
+    <input type="text" v-model="state.newTodoText" />
+    <button @click="addNewTodo">Add Todo</button>
+    <ul>
+      <li v-for="(todo, index) in state.todos" :key="index">
+        <input type="checkbox" :checked="todo.completed" @change="toggleTodoStatus(index)" />
+        <span :class="{ 'line-through': todo.completed }">{{ todo.text }}</span>
+        <button @click="removeTodo(index)">Remove</button>
+      </li>
+    </ul>
+  </main>
 </template>
 
 <style scoped>
-
+  .line-through {
+    text-decoration: line-through;
+  }
 </style>
